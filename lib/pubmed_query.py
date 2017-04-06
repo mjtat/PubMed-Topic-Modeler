@@ -112,7 +112,7 @@ class PubMedQuery(object):
         Entrez.email = self.email
         ids = ','.join(id_dict.values())
         handle = Entrez.efetch(db=self.database,
-                               retmode='xml',
+                               retmode='xml', 
                                id=ids)
         results = Entrez.read(handle)
 

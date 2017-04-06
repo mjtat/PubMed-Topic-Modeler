@@ -17,8 +17,8 @@ def execute(email, terms, articles, topics):
     and model them.
     '''
     pubmed = pq.PubMedQuery(email, terms, articles).return_abstracts()
-    pubmed = pp.cleaned_text(pubmed).clean()
-    topic, scores = tm.topic_model(pubmed, topics).model_lsi()
+    pubmed = pp.clean(pubmed)
+    topic, scores = tm.TopicModel(pubmed, topics).model_lsi()
     fp.topic_barplot(topic, scores).plot()
     return topic, scores
 
