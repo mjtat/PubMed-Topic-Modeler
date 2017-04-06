@@ -30,7 +30,7 @@ You will need to download `nltk`, `gensim`, and `pandas` to run these scripts. T
 * figure_plotting.py
 * execute.py
 
-pubmed_query, preprocess, and topic_modeling are placed within the scripts folder. It is not necessary for you to run them unless you choose to. You can simply download the repository, edit the path argument in the execute.py file (if necessary), then run the execute.py script.
+pubmed_query, preprocess, and topic_modeling are placed within the folder. It is not necessary for you to run them unless you choose to. All you need to run is execute.py script.
 
 1. *pubmed_query.py* makes use of the PubMed open-source API, and retrieves abstracts. It also retrieves other information, such as date of publication, and Pubmed IDs (PMID).
 
