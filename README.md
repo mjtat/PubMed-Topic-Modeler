@@ -1,14 +1,15 @@
 # About PubMed Topic Modeler
 
 **Table of Contents**
-* [Introduction to the project](#Introduction-to-the-project)
-* [Latent Semantic Analysis](#Latent-Semantic-Analysis)
-* [LSA and it's application to research text](#LSA-and-it's-application-to-research-text)
-* [General Schema of the project](### General-Schema-of-the-project)
+* [Introduction to the project](#introduction-to-the-project)
+* [Latent Semantic Analysis](#latent-semantic-analysis)
+* [LSA and it's application to research text](#lsa-and-it's-application-to-research-text)
+* [General Schema of the project](#general-schema-of-the-project)
+* [Running the modules](#running-the-modules)
 
 ### Introduction to the project
 
-As an Insight fellow, my main project was [Happy Helper](www.happyhelper.site). This project allowed me to get my start on [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing)(NLP). There, I did some document classification, specifically of reddit posts from support forums for anxiety and depression.
+As an Insight fellow, my main project was [Happy Helper](www.happyhelper.site). This project allowed me to get my start on [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing) (NLP). There, I did some document classification, specifically of reddit posts from support forums for anxiety and depression.
 
 I want to get deeper into NLP exploring other methods to model linguistic information. One interesting thing to do in NLP try to find latent [topics](https://en.wikipedia.org/wiki/Topic_model) from a set of documents. For example, on a reddit forum for depression, there may exist several latent topics. There might be posts about therapists, there might be post about how someone was feeling that day, there might be posts about how someone has treated their depression. If you are building a large corpora in a specific domain, there may exist sub-domains within the corpus. You could easily sift through the corpus by hand, but that is time consuming. There are machine learning algorithms that will help do this for you.
 
@@ -24,7 +25,7 @@ It is my hope that the topic modeler can provide a better, finer grained, method
 
 This project was a part of the Insight Computer Science mini-specialization program.
 
-## General Schema of the project
+### General Schema of the project
 
 ![Alt Text](https://github.com/mjtat/PubMed-Topic-Modeler/blob/master/images/schema.png?raw=true)
 
@@ -50,18 +51,17 @@ pubmed_query, preprocess, and topic_modeling are placed within the folder. It is
 
 1. *pubmed_query.py* makes use of the PubMed open-source API, and retrieves abstracts. It also retrieves other information, such as date of publication, and Pubmed IDs (PMID).
 
-* The query process can be invoked with the following syntax: ```pubmed_query(email, terms, author, number_of_articles).return_abstracts()``` It will return a dictionary with all abstracts.
+* The query process can be invoked with the following syntax: ```PubMedQuery(email, terms, author, number_of_articles).return_abstracts()``` It will return a dictionary with all abstracts.
 
 2. *preprocess.py* primarily does data cleaning. It removes low information words, tokenizes, then lemmatizes each word.
 
-* The cleaning process can be invoked with the following syntax: ``` cleaned_text(dict_here).clean() ```. It will return a dictionary of cleaned text, which can be queried as follows: ``` dictionary[key][3] ```
+* The cleaning process can be invoked with the following syntax: ``` clean(dict_here) ```. It will return a dictionary of cleaned text, which can be queried as follows: ``` dictionary[key][3] ```
 
-3. *topic_modeling.py* makes use of the `gensim` package to covert text into a large corpora, vectorize the text using term-frequency inverse-document frequency (TF-IDF), and extract topics using latent semantic analysis (also known as latent semantic indexing).
-
+3. *topic_modeling.py* makes use of the `gensim` package to covert text into a large corpora, vectorize the text using term-frequency inverse-document frequency (TF-IDF), and extract topics using LSA.
 
 4. *execute.py* is a wrapper that runs all three functions sequentially, such that you do not have to inspect the scripts individually. `execute.py` can also be run on the command line.
 
-**The modeling process can be invoked with the following syntax, specifically from the execute.py file:** ```topic, scores = run_modeler(email, keyword args, number of abstracts to return, number of topics to model)```. Note that email and keywords are strings, and number of abstracts / topics are ints.
+**The modeling process can be invoked with the following syntax, specifically from the execute.py file:** ```topic, scores = execute(email, keyword args, number of abstracts to return, number of topics to model)```. Note that email and keywords are strings, and number of abstracts / topics are ints.
 
 **If you want to run it from the command line, here's some example syntax.** ```python execute.py tatinthehat@gmail.com anxiety depression 5 2``` *tatinthehat@gmail.com* is a required email argument, *anxiety depress* are keywords (right now you MUST enter two keywords), *5* is the number of articles to search, and *2* is the number of topics to generate. Below is a screen case of how this works on the command line.
 
@@ -71,13 +71,14 @@ pubmed_query, preprocess, and topic_modeling are placed within the folder. It is
 
 **If you want to run it from the command line, here's some example syntax.** ```python execute.py tatinthehat@gmail.com anxiety depression 5 2``` *tatinthehat@gmail.com* is a required email argument, *anxiety depress* are keywords (right now you MUST enter two keywords), *5* is the number of articles to search, and *2* is the number of topics to generate. Below is a screen case of how this works on the command line.
 
+### Running the modules
 
-### Terminal Example (click to view)
+**Terminal Example (click to play)**
 
 [![asciicast](https://asciinema.org/a/9gf2fwd157l23dw8poh467kj6.png)](https://asciinema.org/a/9gf2fwd157l23dw8poh467kj6)
 
 
-### Here's an example of running execute.py in an IDE (Spyder).
+**IDE Example (Spyder)**
 
 
 ```
