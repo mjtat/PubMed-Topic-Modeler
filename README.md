@@ -5,6 +5,8 @@
 * [Latent Semantic Analysis](#latent-semantic-analysis)
 * [LSA and it's application to research text](#lsa-and-it's-application-to-research-text)
 * [General Schema of the project](#general-schema-of-the-project)
+* [Required packages](#required-packages)
+* [Overview of files in PubMed Topic Modeler][#overview-of-files]
 * [Running the modules](#running-the-modules)
 
 ### Introduction to the project
@@ -30,7 +32,7 @@ This project was a part of the Insight Computer Science mini-specialization prog
 ![Alt Text](https://github.com/mjtat/PubMed-Topic-Modeler/blob/master/images/schema.png?raw=true)
 
 
-**REQUIRED MODULES**
+### Required Packages
 You will need to download `nltk`, `gensim`, and `pandas` to run these scripts. To do that, you can type the following in terminal / console:
 
 `pip install nltk` or `conda install nltk` (if you have Anaconda)
@@ -41,13 +43,17 @@ You will need to download `nltk`, `gensim`, and `pandas` to run these scripts. T
 
 `pip install pandas` (pandas is already included in Anaconda)
 
+### Overview of files
+
+There are five files in this package.
+
 * pubmed_query.py
 * preprocess.py
 * topic_modeling.py
 * figure_plotting.py
 * execute.py
 
-pubmed_query, preprocess, and topic_modeling are placed within the folder. It is not necessary for you to run them unless you choose to. All you need to run is execute.py script.
+pubmed_query, preprocess, topic_modeling, and figure_plotting are placed within the folder. It is not necessary for you to run them unless you choose to. All you need to run is execute.py script.
 
 1. *pubmed_query.py* makes use of the PubMed open-source API, and retrieves abstracts. It also retrieves other information, such as date of publication, and Pubmed IDs (PMID).
 
