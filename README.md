@@ -6,7 +6,7 @@
 * [LSA and it's application to research text](#lsa-and-it's-application-to-research-text)
 * [General Schema of the project](#general-schema-of-the-project)
 * [Required packages](#required-packages)
-* [Overview of files in PubMed Topic Modeler][#overview-of-files]
+* [Overview of files in PubMed Topic Modeler](#overview-of-files)
 * [Running the modules](#running-the-modules)
 
 ### Introduction to the project
