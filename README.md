@@ -1,14 +1,30 @@
 # About PubMed Topic Modeler
 
-The goal for the PubMed Topic Modeler is to query PubMed, use various natural language processing methods (NLP) to cleanse the text, and generate topics that are contained within the texts queried.
+**Table of Contents**
+* [Introduction to the project](#Introduction-to-the-project)
+* [Latent Semantic Analysis](#Latent-Semantic-Analysis)
+* [LSA and it's application to research text](#LSA-and-it's-application-to-research-text)
+* [General Schema of the project](### General-Schema-of-the-project)
 
-The idea is that a user can use this tool to determine the different domains of research in a given area of research. Specifically, many Alzheimer's disease articles may deal with bioinformatics and genomics. You might be interested in potential subtopics that are an intersection of these two domains. It is my hope that the topic modeler can provide a better, finer grained, method to categorize abstracts. If not, it's still an intersting little exercise in using PubMed abstracts as a source of information for different NLP and machine learning techniques.
+### Introduction to the project
 
-Specifically, these scripts model text using latent semantic analysis (LSA). There's a really good detailed explanation of [LSA on Wikipedia](https://en.wikipedia.org/wiki/Latent_semantic_analysis).
+As an Insight fellow, my main project was [Happy Helper](www.happyhelper.site). This project allowed me to get my start on [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing)(NLP). There, I did some document classification, specifically of reddit posts from support forums for anxiety and depression.
 
-This is current a work in progress, and is part of the Insight Computer Science mini-specialization program.
+I want to get deeper into NLP exploring other methods to model linguistic information. One interesting thing to do in NLP try to find latent [topics](https://en.wikipedia.org/wiki/Topic_model) from a set of documents. For example, on a reddit forum for depression, there may exist several latent topics. There might be posts about therapists, there might be post about how someone was feeling that day, there might be posts about how someone has treated their depression. If you are building a large corpora in a specific domain, there may exist sub-domains within the corpus. You could easily sift through the corpus by hand, but that is time consuming. There are machine learning algorithms that will help do this for you.
 
-## General Schema of the project:
+### Latent Semantic Analysis
+[Latent Semantic Analysis](https://en.wikipedia.org/wiki/Latent_semantic_analysis)(LSA) is a method whereby vectorized text data is decomposed to separate matrices using Singular Value Decomposition, which yields topic scores that are linear cominbations of certain words (this is a gross oversimplication). One way to think about LSA is that it is simply principal components analysis for vectorized text. LSA will yield *n-topics* which will show linear combinations of words that contribute to a topic.
+
+### LSA and it's application to research text
+I wanted to apply LSA to the straightforward scenario where a researcher may be asked to scrape a number of journal articles, and determine what percentage of articles belong to x,y,z categories.
+
+This is the goal for PubMed Topic Modeler. PubMed Topic Modeler will query PubMed, use various NLP to cleanse the text, and generate topics that are contained within the texts queried.
+
+It is my hope that the topic modeler can provide a better, finer grained, method to categorize abstracts. If not, it's still an interesting little exercise in using PubMed abstracts as a source of information for different NLP and machine learning techniques.
+
+This project was a part of the Insight Computer Science mini-specialization program.
+
+## General Schema of the project
 
 ![Alt Text](https://github.com/mjtat/PubMed-Topic-Modeler/blob/master/images/schema.png?raw=true)
 
